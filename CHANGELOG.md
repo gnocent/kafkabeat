@@ -4,7 +4,7 @@
 
 One entry per published version, most recent first; "Unreleased" gathers what waits for the next tag.
 
-## Unreleased
+## v0.1.1 (2026-10-28)
 
 - `kafkabeat -version` shows the module version when the binary was installed with `go install` (it showed `dev`).
 
