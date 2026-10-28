@@ -9,6 +9,7 @@ import (
 	"log"
 	"os"
 	"os/signal"
+	"runtime/debug"
 	"syscall"
 	"time"
 
@@ -21,7 +22,18 @@ import (
 	"github.com/gnocent/kafkabeat/internal/sink"
 )
 
+// version est injectée par -ldflags (make, make dist, image) ; à défaut, celle
+// du module, connue d'un binaire installé par go install.
 var version = "dev"
+
+// moduleVersion garde la version injectée, sinon prend celle des informations
+// de build quand elles en portent une (« (devel) » : compilation sans version).
+func moduleVersion(injected string, info *debug.BuildInfo, ok bool) string {
+	if injected != "dev" || !ok || info.Main.Version == "" || info.Main.Version == "(devel)" {
+		return injected
+	}
+	return info.Main.Version
+}
 
 func main() {
 	cfgPath := flag.String("config", "kafkabeat.yml", "path to the configuration file")
@@ -29,6 +41,8 @@ func main() {
 	once := flag.Bool("once", false, "run a single cycle and exit")
 	stdout := flag.Bool("stdout", false, "write documents to standard output instead of Elasticsearch")
 	flag.Parse()
+	info, ok := debug.ReadBuildInfo()
+	version = moduleVersion(version, info, ok)
 	if *showVersion {
 		fmt.Println("kafkabeat", version)
 		return

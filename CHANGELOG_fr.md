@@ -4,6 +4,10 @@
 
 Une entrée par version publiée, la plus récente en tête ; « à paraître » regroupe ce qui attend le prochain tag.
 
+## À paraître
+
+- `kafkabeat -version` affiche la version du module quand le binaire a été installé par `go install` (il affichait `dev`).
+
 ## v0.1.0 (2026-10-28)
 
 Première version publique. Fonctionnement et validation : [DESIGN_fr.md](DESIGN_fr.md).
