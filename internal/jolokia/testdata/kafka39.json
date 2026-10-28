@@ -1,0 +1,215 @@
+[
+ {
+  "request": {
+   "mbean": "kafka.network:name=RequestQueueSize,type=RequestChannel",
+   "attribute": "Value",
+   "type": "read"
+  },
+  "value": {
+   "Value": 0
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=FailedProduceRequestsPerSec,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=FailedFetchRequestsPerSec,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.controller:name=LeaderElectionRateAndTimeMs,type=ControllerStats",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "stacktrace": "javax.management.InstanceNotFoundException: kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(Unknown Source)\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(Unknown Source)\n\tat java.management\/com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(Unknown Source)\n\tat org.jolokia.handler.ReadHandler$2.execute(ReadHandler.java:60)\n\tat org.jolokia.backend.executor.AbstractMBeanServerExecutor.call(AbstractMBeanServerExecutor.java:90)\n\tat org.jolokia.handler.ReadHandler.getAttribute(ReadHandler.java:239)\n\tat org.jolokia.handler.ReadHandler.fetchAttributes(ReadHandler.java:189)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:118)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:37)\n\tat org.jolokia.handler.JsonRequestHandler.handleRequest(JsonRequestHandler.java:161)\n\tat org.jolokia.backend.MBeanServerHandler.dispatchRequest(MBeanServerHandler.java:156)\n\tat org.jolokia.backend.LocalRequestDispatcher.dispatchRequest(LocalRequestDispatcher.java:99)\n\tat org.jolokia.backend.BackendManager.callRequestDispatcher(BackendManager.java:429)\n\tat org.jolokia.backend.BackendManager.handleRequest(BackendManager.java:158)\n\tat org.jolokia.http.HttpRequestHandler.executeRequest(HttpRequestHandler.java:197)\n\tat org.jolokia.http.HttpRequestHandler.handlePostRequest(HttpRequestHandler.java:131)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.executePostRequest(JolokiaHttpHandler.java:292)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.doHandle(JolokiaHttpHandler.java:238)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.handle(JolokiaHttpHandler.java:180)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.AuthFilter.doFilter(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange.run(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat java.base\/java.lang.Thread.run(Unknown Source)\n",
+  "error_type": "javax.management.InstanceNotFoundException",
+  "error": "javax.management.InstanceNotFoundException : kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.controller:name=UncleanLeaderElectionsPerSec,type=ControllerStats",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=ZooKeeperDisconnectsPerSec,type=SessionExpireListener",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "stacktrace": "javax.management.InstanceNotFoundException: kafka.server:type=SessionExpireListener,name=ZooKeeperDisconnectsPerSec\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(Unknown Source)\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(Unknown Source)\n\tat java.management\/com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(Unknown Source)\n\tat org.jolokia.handler.ReadHandler$2.execute(ReadHandler.java:60)\n\tat org.jolokia.backend.executor.AbstractMBeanServerExecutor.call(AbstractMBeanServerExecutor.java:90)\n\tat org.jolokia.handler.ReadHandler.getAttribute(ReadHandler.java:239)\n\tat org.jolokia.handler.ReadHandler.fetchAttributes(ReadHandler.java:189)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:118)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:37)\n\tat org.jolokia.handler.JsonRequestHandler.handleRequest(JsonRequestHandler.java:161)\n\tat org.jolokia.backend.MBeanServerHandler.dispatchRequest(MBeanServerHandler.java:156)\n\tat org.jolokia.backend.LocalRequestDispatcher.dispatchRequest(LocalRequestDispatcher.java:99)\n\tat org.jolokia.backend.BackendManager.callRequestDispatcher(BackendManager.java:429)\n\tat org.jolokia.backend.BackendManager.handleRequest(BackendManager.java:158)\n\tat org.jolokia.http.HttpRequestHandler.executeRequest(HttpRequestHandler.java:197)\n\tat org.jolokia.http.HttpRequestHandler.handlePostRequest(HttpRequestHandler.java:131)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.executePostRequest(JolokiaHttpHandler.java:292)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.doHandle(JolokiaHttpHandler.java:238)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.handle(JolokiaHttpHandler.java:180)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.AuthFilter.doFilter(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange.run(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat java.base\/java.lang.Thread.run(Unknown Source)\n",
+  "error_type": "javax.management.InstanceNotFoundException",
+  "error": "javax.management.InstanceNotFoundException : kafka.server:type=SessionExpireListener,name=ZooKeeperDisconnectsPerSec",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=ZooKeeperExpiresPerSec,type=SessionExpireListener",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "stacktrace": "javax.management.InstanceNotFoundException: kafka.server:type=SessionExpireListener,name=ZooKeeperExpiresPerSec\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(Unknown Source)\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(Unknown Source)\n\tat java.management\/com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(Unknown Source)\n\tat org.jolokia.handler.ReadHandler$2.execute(ReadHandler.java:60)\n\tat org.jolokia.backend.executor.AbstractMBeanServerExecutor.call(AbstractMBeanServerExecutor.java:90)\n\tat org.jolokia.handler.ReadHandler.getAttribute(ReadHandler.java:239)\n\tat org.jolokia.handler.ReadHandler.fetchAttributes(ReadHandler.java:189)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:118)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:37)\n\tat org.jolokia.handler.JsonRequestHandler.handleRequest(JsonRequestHandler.java:161)\n\tat org.jolokia.backend.MBeanServerHandler.dispatchRequest(MBeanServerHandler.java:156)\n\tat org.jolokia.backend.LocalRequestDispatcher.dispatchRequest(LocalRequestDispatcher.java:99)\n\tat org.jolokia.backend.BackendManager.callRequestDispatcher(BackendManager.java:429)\n\tat org.jolokia.backend.BackendManager.handleRequest(BackendManager.java:158)\n\tat org.jolokia.http.HttpRequestHandler.executeRequest(HttpRequestHandler.java:197)\n\tat org.jolokia.http.HttpRequestHandler.handlePostRequest(HttpRequestHandler.java:131)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.executePostRequest(JolokiaHttpHandler.java:292)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.doHandle(JolokiaHttpHandler.java:238)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.handle(JolokiaHttpHandler.java:180)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.AuthFilter.doFilter(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange.run(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat java.base\/java.lang.Thread.run(Unknown Source)\n",
+  "error_type": "javax.management.InstanceNotFoundException",
+  "error": "javax.management.InstanceNotFoundException : kafka.server:type=SessionExpireListener,name=ZooKeeperExpiresPerSec",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=ZooKeeperReadOnlyConnectsPerSec,type=SessionExpireListener",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "stacktrace": "javax.management.InstanceNotFoundException: kafka.server:type=SessionExpireListener,name=ZooKeeperReadOnlyConnectsPerSec\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(Unknown Source)\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(Unknown Source)\n\tat java.management\/com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(Unknown Source)\n\tat org.jolokia.handler.ReadHandler$2.execute(ReadHandler.java:60)\n\tat org.jolokia.backend.executor.AbstractMBeanServerExecutor.call(AbstractMBeanServerExecutor.java:90)\n\tat org.jolokia.handler.ReadHandler.getAttribute(ReadHandler.java:239)\n\tat org.jolokia.handler.ReadHandler.fetchAttributes(ReadHandler.java:189)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:118)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:37)\n\tat org.jolokia.handler.JsonRequestHandler.handleRequest(JsonRequestHandler.java:161)\n\tat org.jolokia.backend.MBeanServerHandler.dispatchRequest(MBeanServerHandler.java:156)\n\tat org.jolokia.backend.LocalRequestDispatcher.dispatchRequest(LocalRequestDispatcher.java:99)\n\tat org.jolokia.backend.BackendManager.callRequestDispatcher(BackendManager.java:429)\n\tat org.jolokia.backend.BackendManager.handleRequest(BackendManager.java:158)\n\tat org.jolokia.http.HttpRequestHandler.executeRequest(HttpRequestHandler.java:197)\n\tat org.jolokia.http.HttpRequestHandler.handlePostRequest(HttpRequestHandler.java:131)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.executePostRequest(JolokiaHttpHandler.java:292)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.doHandle(JolokiaHttpHandler.java:238)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.handle(JolokiaHttpHandler.java:180)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.AuthFilter.doFilter(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange.run(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat java.base\/java.lang.Thread.run(Unknown Source)\n",
+  "error_type": "javax.management.InstanceNotFoundException",
+  "error": "javax.management.InstanceNotFoundException : kafka.server:type=SessionExpireListener,name=ZooKeeperReadOnlyConnectsPerSec",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=ZooKeeperSyncConnectsPerSec,type=SessionExpireListener",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "stacktrace": "javax.management.InstanceNotFoundException: kafka.server:type=SessionExpireListener,name=ZooKeeperSyncConnectsPerSec\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getMBean(Unknown Source)\n\tat java.management\/com.sun.jmx.interceptor.DefaultMBeanServerInterceptor.getAttribute(Unknown Source)\n\tat java.management\/com.sun.jmx.mbeanserver.JmxMBeanServer.getAttribute(Unknown Source)\n\tat org.jolokia.handler.ReadHandler$2.execute(ReadHandler.java:60)\n\tat org.jolokia.backend.executor.AbstractMBeanServerExecutor.call(AbstractMBeanServerExecutor.java:90)\n\tat org.jolokia.handler.ReadHandler.getAttribute(ReadHandler.java:239)\n\tat org.jolokia.handler.ReadHandler.fetchAttributes(ReadHandler.java:189)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:118)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:37)\n\tat org.jolokia.handler.JsonRequestHandler.handleRequest(JsonRequestHandler.java:161)\n\tat org.jolokia.backend.MBeanServerHandler.dispatchRequest(MBeanServerHandler.java:156)\n\tat org.jolokia.backend.LocalRequestDispatcher.dispatchRequest(LocalRequestDispatcher.java:99)\n\tat org.jolokia.backend.BackendManager.callRequestDispatcher(BackendManager.java:429)\n\tat org.jolokia.backend.BackendManager.handleRequest(BackendManager.java:158)\n\tat org.jolokia.http.HttpRequestHandler.executeRequest(HttpRequestHandler.java:197)\n\tat org.jolokia.http.HttpRequestHandler.handlePostRequest(HttpRequestHandler.java:131)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.executePostRequest(JolokiaHttpHandler.java:292)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.doHandle(JolokiaHttpHandler.java:238)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.handle(JolokiaHttpHandler.java:180)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.AuthFilter.doFilter(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange.run(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat java.base\/java.lang.Thread.run(Unknown Source)\n",
+  "error_type": "javax.management.InstanceNotFoundException",
+  "error": "javax.management.InstanceNotFoundException : kafka.server:type=SessionExpireListener,name=ZooKeeperSyncConnectsPerSec",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.log:name=LogFlushRateAndTimeMs,type=LogFlushStats",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 2.105921819635138
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesRejectedPerSec,topic=*,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "stacktrace": "javax.management.InstanceNotFoundException: No MBean with pattern kafka.server:type=BrokerTopicMetrics,name=BytesRejectedPerSec,topic=* found for reading attributes\n\tat org.jolokia.handler.ReadHandler.searchMBeans(ReadHandler.java:160)\n\tat org.jolokia.handler.ReadHandler.fetchAttributesForMBeanPattern(ReadHandler.java:126)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:116)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:37)\n\tat org.jolokia.handler.JsonRequestHandler.handleRequest(JsonRequestHandler.java:161)\n\tat org.jolokia.backend.MBeanServerHandler.dispatchRequest(MBeanServerHandler.java:156)\n\tat org.jolokia.backend.LocalRequestDispatcher.dispatchRequest(LocalRequestDispatcher.java:99)\n\tat org.jolokia.backend.BackendManager.callRequestDispatcher(BackendManager.java:429)\n\tat org.jolokia.backend.BackendManager.handleRequest(BackendManager.java:158)\n\tat org.jolokia.http.HttpRequestHandler.executeRequest(HttpRequestHandler.java:197)\n\tat org.jolokia.http.HttpRequestHandler.handlePostRequest(HttpRequestHandler.java:131)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.executePostRequest(JolokiaHttpHandler.java:292)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.doHandle(JolokiaHttpHandler.java:238)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.handle(JolokiaHttpHandler.java:180)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.AuthFilter.doFilter(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange.run(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat java.base\/java.lang.Thread.run(Unknown Source)\n",
+  "error_type": "javax.management.InstanceNotFoundException",
+  "error": "javax.management.InstanceNotFoundException : No MBean with pattern kafka.server:type=BrokerTopicMetrics,name=BytesRejectedPerSec,topic=* found for reading attributes",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesInPerSec,topic=*,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "kafka.server:name=BytesInPerSec,topic=jolokia-probe,type=BrokerTopicMetrics": {
+    "OneMinuteRate": 9414.672086026165
+   }
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesOutPerSec,topic=*,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "stacktrace": "javax.management.InstanceNotFoundException: No MBean with pattern kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=* found for reading attributes\n\tat org.jolokia.handler.ReadHandler.searchMBeans(ReadHandler.java:160)\n\tat org.jolokia.handler.ReadHandler.fetchAttributesForMBeanPattern(ReadHandler.java:126)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:116)\n\tat org.jolokia.handler.ReadHandler.doHandleRequest(ReadHandler.java:37)\n\tat org.jolokia.handler.JsonRequestHandler.handleRequest(JsonRequestHandler.java:161)\n\tat org.jolokia.backend.MBeanServerHandler.dispatchRequest(MBeanServerHandler.java:156)\n\tat org.jolokia.backend.LocalRequestDispatcher.dispatchRequest(LocalRequestDispatcher.java:99)\n\tat org.jolokia.backend.BackendManager.callRequestDispatcher(BackendManager.java:429)\n\tat org.jolokia.backend.BackendManager.handleRequest(BackendManager.java:158)\n\tat org.jolokia.http.HttpRequestHandler.executeRequest(HttpRequestHandler.java:197)\n\tat org.jolokia.http.HttpRequestHandler.handlePostRequest(HttpRequestHandler.java:131)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.executePostRequest(JolokiaHttpHandler.java:292)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.doHandle(JolokiaHttpHandler.java:238)\n\tat org.jolokia.jvmagent.handler.JolokiaHttpHandler.handle(JolokiaHttpHandler.java:180)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.AuthFilter.doFilter(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(Unknown Source)\n\tat jdk.httpserver\/com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)\n\tat jdk.httpserver\/sun.net.httpserver.ServerImpl$Exchange.run(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)\n\tat java.base\/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)\n\tat java.base\/java.lang.Thread.run(Unknown Source)\n",
+  "error_type": "javax.management.InstanceNotFoundException",
+  "error": "javax.management.InstanceNotFoundException : No MBean with pattern kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec,topic=* found for reading attributes",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=MessagesInPerSec,topic=*,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "kafka.server:name=MessagesInPerSec,topic=jolokia-probe,type=BrokerTopicMetrics": {
+    "OneMinuteRate": 50.880010105277535
+   }
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesRejectedPerSec,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesInPerSec,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 6273.185461433798
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesOutPerSec,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=MessagesInPerSec,type=BrokerTopicMetrics",
+   "attribute": "OneMinuteRate",
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 33.747871334228066
+  },
+  "timestamp": 1793119346,
+  "status": 200
+ }
+]

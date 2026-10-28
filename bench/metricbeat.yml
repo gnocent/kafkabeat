@@ -1,0 +1,53 @@
+# Metricbeat de référence du banc : metricsets partition, consumergroup et broker du
+# module kafka, un bloc par cluster, champ statique bench_cluster à la racine du document.
+# Monté en lecture seule dans le conteneur metricbeat (voir compose.yaml).
+
+metricbeat.modules:
+  - module: kafka
+    metricsets: [partition, consumergroup]
+    period: 30s
+    hosts: ["kafka39:9092"]
+    fields:
+      bench_cluster: kafka39
+    fields_under_root: true
+
+  - module: kafka
+    metricsets: [partition, consumergroup]
+    period: 30s
+    hosts: ["kafka44:9092"]
+    fields:
+      bench_cluster: kafka44
+    fields_under_root: true
+
+  # metricset broker par Jolokia (critère 11) : période de 10 s pour encadrer
+  # chaque valeur de kafkabeat (60 s) entre des valeurs de Metricbeat.
+  # Constaté le 27/10 avec Jolokia 2.6.3 : un MBean absent (ZooKeeper,
+  # ControllerStats en KRaft) revient en objet d'erreur à la place de sa
+  # valeur ; Elasticsearch rejette alors tout le document des MBeans fixes
+  # (« events were dropped ») et Metricbeat ne publie que les documents par
+  # topic, quel que soit le chemin configuré.
+  - module: kafka
+    metricsets: [broker]
+    period: 10s
+    hosts: ["kafka39:8778"]
+    fields:
+      bench_cluster: kafka39
+    fields_under_root: true
+
+  - module: kafka
+    metricsets: [broker]
+    period: 10s
+    hosts: ["kafka44:8779"]
+    fields:
+      bench_cluster: kafka44
+    fields_under_root: true
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+
+# Template d'index et ILM : valeurs par défaut (data stream metricbeat-<version>).
+setup.template.enabled: true
+setup.ilm.enabled: true
+
+logging.level: info
+logging.to_stderr: true

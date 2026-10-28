@@ -1,0 +1,269 @@
+[
+ {
+  "request": {
+   "mbean": "kafka.network:name=RequestQueueSize,type=RequestChannel",
+   "attribute": [
+    "Value"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "Value": 0
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=FailedProduceRequestsPerSec,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=FailedFetchRequestsPerSec,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.controller:name=LeaderElectionRateAndTimeMs,type=ControllerStats",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "error_type": "javax.management.InstanceNotFoundException",
+  ".error": true,
+  "error_type_jmx": "javax.management.InstanceNotFoundException",
+  "error": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.controller:name=UncleanLeaderElectionsPerSec,type=ControllerStats",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=ZooKeeperDisconnectsPerSec,type=SessionExpireListener",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "error_type": "javax.management.InstanceNotFoundException",
+  ".error": true,
+  "error_type_jmx": "javax.management.InstanceNotFoundException",
+  "error": "kafka.server:type=SessionExpireListener,name=ZooKeeperDisconnectsPerSec",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=ZooKeeperExpiresPerSec,type=SessionExpireListener",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "error_type": "javax.management.InstanceNotFoundException",
+  ".error": true,
+  "error_type_jmx": "javax.management.InstanceNotFoundException",
+  "error": "kafka.server:type=SessionExpireListener,name=ZooKeeperExpiresPerSec",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=ZooKeeperReadOnlyConnectsPerSec,type=SessionExpireListener",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "error_type": "javax.management.InstanceNotFoundException",
+  ".error": true,
+  "error_type_jmx": "javax.management.InstanceNotFoundException",
+  "error": "kafka.server:type=SessionExpireListener,name=ZooKeeperReadOnlyConnectsPerSec",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=ZooKeeperSyncConnectsPerSec,type=SessionExpireListener",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "error_type": "javax.management.InstanceNotFoundException",
+  ".error": true,
+  "error_type_jmx": "javax.management.InstanceNotFoundException",
+  "error": "kafka.server:type=SessionExpireListener,name=ZooKeeperSyncConnectsPerSec",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.log:name=LogFlushRateAndTimeMs,type=LogFlushStats",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 2.0099939327009606
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesRejectedPerSec,topic=*,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "error_type": "javax.management.InstanceNotFoundException",
+  ".error": true,
+  "error_type_jmx": "javax.management.InstanceNotFoundException",
+  "error": "No MBean with pattern kafka.server:type=BrokerTopicMetrics,name=BytesRejectedPerSec,topic=* found for READ request",
+  "status": 404
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesInPerSec,topic=*,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "kafka.server:name=BytesInPerSec,topic=__consumer_offsets,type=BrokerTopicMetrics": {
+    "OneMinuteRate": 1.854187662957643E-33
+   },
+   "kafka.server:name=BytesInPerSec,topic=jolokia-probe,type=BrokerTopicMetrics": {
+    "OneMinuteRate": 9447.791597096697
+   }
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesOutPerSec,topic=*,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "kafka.server:name=BytesOutPerSec,topic=r14025-c10rebalances-kafka44-c10,type=BrokerTopicMetrics": {
+    "OneMinuteRate": 0.0
+   },
+   "kafka.server:name=BytesOutPerSec,topic=__consumer_offsets,type=BrokerTopicMetrics": {
+    "OneMinuteRate": 1.511790818634102E-35
+   }
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=MessagesInPerSec,topic=*,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "kafka.server:name=MessagesInPerSec,topic=jolokia-probe,type=BrokerTopicMetrics": {
+    "OneMinuteRate": 51.083089360341575
+   },
+   "kafka.server:name=MessagesInPerSec,topic=__consumer_offsets,type=BrokerTopicMetrics": {
+    "OneMinuteRate": 1.762191432332984E-35
+   }
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesRejectedPerSec,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 0.0
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesInPerSec,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 6347.721194705623
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=BytesOutPerSec,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 3.013641526220814E-36
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ },
+ {
+  "request": {
+   "mbean": "kafka.server:name=MessagesInPerSec,type=BrokerTopicMetrics",
+   "attribute": [
+    "OneMinuteRate"
+   ],
+   "type": "read"
+  },
+  "value": {
+   "OneMinuteRate": 34.153804352110235
+  },
+  "status": 200,
+  "timestamp": 1793119346
+ }
+]

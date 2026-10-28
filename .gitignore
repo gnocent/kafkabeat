@@ -1,0 +1,18 @@
+bin/
+dist/
+bench/data/
+*.journal
+*.state
+*.state.tmp
+/state/
+bench/render/node_modules/
+bench/jolokia/
+# capture de bench/render/render.mjs lancée depuis la racine
+/*.png
+# configuration réelle (identifiants) copiée depuis l'exemple
+/kafkabeat.yml
+# documents de travail de l'auteur (brief, cadre, plans, revues), hors du dépôt public
+/brief-initial.md
+/plans/
+/CADRE.md
+__pycache__/

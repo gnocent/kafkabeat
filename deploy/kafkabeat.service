@@ -1,0 +1,58 @@
+[Unit]
+Description=kafkabeat: Kafka time lag to Elasticsearch
+Documentation=https://github.com/gnocent/kafkabeat
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Ephemeral system user: nothing to create at install time. The configuration
+# (Kafka and Elasticsearch credentials) stays 0600 root in /etc/kafkabeat;
+# LoadCredential (systemd 247 or later) hands it to the service, readable by it only,
+# in /run/credentials/kafkabeat.service (the %d specifier only exists from
+# systemd 250 on, hence the literal path). TLS certificates and keys are
+# declared the same way and referenced by that path in the configuration:
+#   LoadCredential=ca.pem:/etc/kafkabeat/ca.pem   ->   ca_file: /run/credentials/kafkabeat.service/ca.pem
+DynamicUser=yes
+LoadCredential=kafkabeat.yml:/etc/kafkabeat/kafkabeat.yml
+ExecStart=/usr/local/bin/kafkabeat -config /run/credentials/kafkabeat.service/kafkabeat.yml
+# state.path: ./state from the example configuration ends up in /var/lib/kafkabeat/state,
+# the only writable path (StateDirectory) under ProtectSystem=strict.
+StateDirectory=kafkabeat
+WorkingDirectory=/var/lib/kafkabeat
+Restart=always
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=60
+LimitNOFILE=65536
+UMask=0077
+
+# Sandbox: static Go binary that only needs outbound TCP and its state
+# directory. Syntax checked (systemd-analyze verify); validate on the target
+# host at first start (journal) and with systemd-analyze security.
+NoNewPrivileges=true
+CapabilityBoundingSet=
+AmbientCapabilities=
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+ProtectProc=invisible
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+SystemCallArchitectures=native
+SystemCallFilter=@system-service
+SystemCallErrorNumber=EPERM
+
+[Install]
+WantedBy=multi-user.target

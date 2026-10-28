@@ -1,0 +1,68 @@
+# Example kafkabeat configuration (local bench values): copy to kafkabeat.yml
+# (ignored by git) and adapt. The file holds credentials: keep it at mode 0600;
+# the shipped systemd unit reads it through LoadCredential, without otherwise making it readable to the service.
+cluster: bench-39          # cluster name in documents (kafka.cluster.name); one instance per cluster
+kafka:
+  brokers: ["localhost:19092"]
+  client_id: kafkabeat
+  tls:
+    enabled: false
+    # ca_file: /etc/kafkabeat/ca.pem           # trusted authority (default: system store)
+    # cert_file: /etc/kafkabeat/client.pem     # mTLS: client certificate and key
+    # key_file: /etc/kafkabeat/client-key.pem
+  sasl:
+    mechanism: ""          # "", PLAIN, SCRAM-SHA-256, SCRAM-SHA-512 (use over TLS: PLAIN and SCRAM do not protect the transport)
+    # username: kafkabeat
+    # password: ""
+collect:
+  interval: 10s            # collection and emission cycle for topic+group documents
+  metrics_interval: 60s    # partition and consumergroup documents (Metricbeat names)
+  topics:
+    include: []            # glob patterns; empty = all (internal topics: partition documents only)
+    exclude: []
+  groups:
+    include: []
+    exclude: []
+  stalled_after: 60s       # committed offset frozen for at least this long while lagging => stalled;
+                           # no message on the topic for this long => production stopped
+  flag_hold_cycles: 6      # number of cycles a flag stays raised (at least 1)
+  gone_cycles: 6           # number of cycles a vanished pair is emitted as gone before being purged (at least 1)
+  smoothing_window: 60s    # window of the smoothed consumption rate
+  commits:
+    mode: hybrid           # polling | hybrid (__consumer_offsets stream + reconciliation polling)
+    reconcile_interval: 2m
+history:
+  tiers:                   # granularity of the end-offset history
+    - {step: 10s, span: 15m}
+    - {step: 1m,  span: 3h}
+    - {step: 10m, span: 168h}
+state:
+  path: ./state            # snapshot directory (atomic writes), relative to the working directory
+  snapshot_interval: 5m
+output:
+  elasticsearch:
+    urls: ["http://localhost:9200"]   # several URLs: the next one is tried on a transport error
+    username: ""           # Basic Auth, or api_key; minimal privileges: see INSTALL.md, section “Required permissions”
+    password: ""
+    api_key: ""
+    tls:
+      enabled: false
+      # ca_file, cert_file, key_file: same as kafka.tls
+    setup: true            # installs templates, mappings and ILM at startup
+    prefix: kafkabeat      # data streams kafkabeat-lag and kafkabeat-metrics (TSDS), kafkabeat-health, kafkabeat-events
+    bulk_max_docs: 2000
+  fields: {}               # static enrichment added to every document (document keys are rejected: kafka, event...)
+  owners: []               # topic owner (kafka.topic.owner, "team" filter in the dashboards):
+                           # first rule whose glob pattern matches the topic name, absent otherwise
+                           # - {topic: "payments-*", owner: payments}
+                           # - {topic: "*-logs",     owner: platform}
+jolokia:                   # broker metricset (kafka.broker.*, Metricbeat names) every metrics_interval,
+  enabled: false           # on the Jolokia agent of each discovered broker (host from the metadata)
+  port: 8778
+  path: /jolokia/
+  username: ""             # Basic Auth: cleartext on the network unless tls.enabled is true
+  password: ""
+  tls:
+    enabled: false
+    # ca_file, cert_file, key_file: same as kafka.tls
+  timeout: 10s             # timeout for polling all brokers (outside the 10 s cycle)

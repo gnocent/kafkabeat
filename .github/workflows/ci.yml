@@ -1,0 +1,57 @@
+# Checks every pull request and every push to main: formatting, vendor up to
+# date, go vet (including the acceptance tests, behind the bench tag), unit
+# tests with the race detector, binary build. govulncheck runs separately: it
+# can turn red for a vulnerability published in the Go toolchain or a
+# dependency, unrelated to the change under review.
+#
+# Not run here: the acceptance tests (make recette), which need the Docker bench.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      # Actions pinned to a commit: a tag can be moved to other code.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # The Go version required by go.mod, never a second source of truth.
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+      - name: gofmt
+        run: |
+          unformatted="$(gofmt -l cmd internal bench recette)"
+          if [ -n "$unformatted" ]; then
+            echo "Unformatted files:"
+            echo "$unformatted"
+            exit 1
+          fi
+      - name: vendor up to date
+        run: |
+          go mod vendor
+          git diff --exit-code -- go.mod go.sum vendor
+      - run: go vet ./...
+      - run: go vet -tags bench ./recette/...
+      - run: go test -race -count=1 ./...
+      - run: go build -trimpath -o bin/kafkabeat ./cmd/kafkabeat
+
+  govulncheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+      # Pinned version; go run verifies it against the module checksum database.
+      - run: go run golang.org/x/vuln/cmd/govulncheck@v1.8.0 ./...

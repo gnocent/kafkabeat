@@ -1,0 +1,18 @@
+# Image build context: the Dockerfile only needs go.mod, go.sum, vendor/,
+# cmd/, internal/ and kafkabeat.example.yml. Everything else (git repository,
+# binaries, bench, acceptance tests, real configuration with credentials) stays
+# out of both the context sent to the daemon and the build cache.
+.git
+.github
+bin
+dist
+bench
+recette
+kibana
+deploy
+plans
+*.md
+*.state
+*.state.tmp
+state
+kafkabeat.yml
