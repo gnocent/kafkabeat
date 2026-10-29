@@ -2,6 +2,10 @@
 
 # kafkabeat
 
+[![CI](https://github.com/gnocent/kafkabeat/actions/workflows/ci.yml/badge.svg)](https://github.com/gnocent/kafkabeat/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/gnocent/kafkabeat?include_prereleases)](https://github.com/gnocent/kafkabeat/releases)
+[![License](https://img.shields.io/github/license/gnocent/kafkabeat)](LICENSE)
+
 Le **lag temporel** de chaque paire topic + consumer group d'un cluster Kafka, en secondes, toutes les 10 secondes, publié
 dans Elasticsearch, avec des dashboards et des règles d'alerte Kibana d'exemple. Conçu pour les grands parcs Kafka à fort
 débit où Kafka sert de tampon entre producteurs et consommateurs : des milliers de topics et des dizaines de milliers de

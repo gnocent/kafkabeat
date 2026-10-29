@@ -2,6 +2,10 @@
 
 # kafkabeat
 
+[![CI](https://github.com/gnocent/kafkabeat/actions/workflows/ci.yml/badge.svg)](https://github.com/gnocent/kafkabeat/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/gnocent/kafkabeat?include_prereleases)](https://github.com/gnocent/kafkabeat/releases)
+[![License](https://img.shields.io/github/license/gnocent/kafkabeat)](LICENSE)
+
 The **time lag** of every Kafka topic + consumer group pair, in seconds, every 10 seconds, shipped to Elasticsearch, with
 example Kibana dashboards and alert rules. Built for large, high-throughput Kafka estates where Kafka is a buffer between
 producers and consumers: thousands of topics and tens of thousands of partitions, where what matters is the overall
